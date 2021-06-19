@@ -1,6 +1,11 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: black;
   min-height: 100vh;
   color: white;
+}
+
+a,
+u {
+  text-decoration: none;
 }

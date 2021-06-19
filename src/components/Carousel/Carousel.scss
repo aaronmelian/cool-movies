@@ -1,0 +1,38 @@
+.Carousel {
+  overflow: hidden;
+  padding: 1rem;
+  border-bottom: 1px dashed rgba(112, 100, 100, 0.3);
+}
+
+.Inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+
+.Indicators {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.Indicators > button {
+  margin: 5px;
+}
+
+.Indicators > button.active {
+  color: #fff;
+}
+
+.CarButton {
+  background-color: #82284d;
+  box-shadow: none;
+  border: 3px solid #8c232c;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  color: black;
+}
+
+.CategoryTitle {
+  text-align: initial;
+}

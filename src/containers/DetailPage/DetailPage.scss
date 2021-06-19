@@ -1,0 +1,57 @@
+.DetailPage {
+  padding: 1rem;
+  .MovieTitle {
+    text-align: start;
+  }
+}
+
+.MovieContainer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem;
+  justify-content: center;
+}
+.MovieImage {
+  max-width: 40%;
+  border: 2px solid white;
+}
+
+.MovieDetails {
+  max-width: 40%;
+  padding: 2rem;
+  margin: 4rem;
+  background-color: rgba(112, 100, 100, 0.3);
+  height: fit-content;
+  border-radius: 15px;
+  text-align: start;
+  font-size: 1.2rem;
+  .MovieTagline {
+    font-size: 1.5rem;
+  }
+}
+
+.MovieMicroDetails {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  span {
+    margin: 1rem;
+  }
+}
+.wishListButton {
+  float: right;
+  margin: 1rem;
+}
+
+.DelaGothicOne {
+  font-family: "Dela Gothic One", cursive;
+  font-weight: 500;
+}
+.MateSC {
+  font-family: "Mate SC", serif;
+  font-weight: 700;
+}
+.IndieFlower {
+  font-family: "Indie Flower", cursive;
+  font-weight: 700;
+}

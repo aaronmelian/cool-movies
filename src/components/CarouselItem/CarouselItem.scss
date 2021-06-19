@@ -1,0 +1,17 @@
+.CarouselItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  a {
+    color: white;
+  }
+}
+
+.CarouselBox {
+  width: 40%;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+}
