@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
 body {
   margin: 0;
-  font-family: "Dela Gothic One" -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;

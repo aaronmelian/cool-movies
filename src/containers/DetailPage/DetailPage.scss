@@ -1,8 +1,14 @@
 .DetailPage {
   padding: 1rem;
+
   .MovieTitle {
     text-align: start;
   }
+}
+
+.MovieZCapsule {
+  position: relative;
+  z-index: 500;
 }
 
 .MovieContainer {
@@ -11,6 +17,26 @@
   padding: 1rem;
   justify-content: center;
 }
+
+.titleAndX {
+  display: flex;
+  justify-content: space-between;
+}
+
+.CloseX {
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid black;
+  border-radius: 30%;
+  &:hover {
+    background-color: #8c232c;
+    -webkit-transition: background-color 1.5s ease-out;
+    -moz-transition: background-color 1.5s ease-out;
+    -o-transition: background-color 1.5s ease-out;
+    transition: background-color 1.5s ease-out;
+  }
+}
+
 .MovieImage {
   max-width: 40%;
   border: 2px solid white;

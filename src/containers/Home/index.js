@@ -8,7 +8,7 @@ import CarouselItem from "../../components/CarouselItem";
 const Home = () => {
   const [categories, setCategories] = useState(null);
   const [movieList, setMovieList] = useState(null);
-  const [showWaitingPage, setShowWaitingPage] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
@@ -46,13 +46,13 @@ const Home = () => {
 
   useEffect(() => {
     if (movieList) {
-      setShowWaitingPage(false);
+      setLoading(false);
     }
   }, [movieList]);
 
   return (
     <div className="Home">
-      {!showWaitingPage &&
+      {!loading &&
         movieList.map((catg, i) => {
           return (
             <Carousel key={`catg.name-${i}`} categoryName={catg.name}>
