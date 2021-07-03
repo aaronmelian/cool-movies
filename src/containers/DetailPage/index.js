@@ -1,70 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./DetailPage.scss";
-import { authAxios } from "../../helpers/axios";
-import Backdrop from "../../components/BackDrop/Backdrop";
+import Backdrop from "../../components/Backdrop";
 import { Link } from "react-router-dom";
-
+import Icon from "../../components/Icon";
+import IconBox from "../../components/IconBox";
 import {
   frecuentUrls,
   formatDateToEurope,
   fontClassGetterByIndex,
 } from "../../utils/commonUtils";
-import useStore from "../../store/store";
 
-import { useParams } from "react-router-dom";
-
-const DetailPage = () => {
-  const { id, categoryId } = useParams();
-
-  const [movieDetails, setMovieDetails] = useState(null);
-  const [isOnWishList, setIsOnWishList] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [errorMessage, setErrorMessage] = useState(null);
-
-  const addMovie = useStore((state) => state.addMovie);
-  const removeMovie = useStore((state) => state.removeMovie);
-
-  const movies = useStore((state) => state.movies);
-
-  const MovieToWishListToggleHandler = () => {
-    if (movies && movies.find((mov) => mov.id == id)) {
-      setIsOnWishList(false);
-      removeMovie(parseInt(id));
-    } else {
-      setIsOnWishList(true);
-      addMovie(movieDetails);
-    }
-  };
-
-  useEffect(() => {
-    console.log(movies);
-  }, [movies]);
-
-  useEffect(() => {
-    // Get movie data.
-    authAxios
-      .get(`movie/${id}`)
-      .then((resp) => {
-        setMovieDetails(resp.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setErrorMessage(err);
-      });
-  }, []);
-
-  return (
+const DetailPage = ({
+  movieDetails,
+  categoryId,
+  isOnWishList,
+  loading,
+  addOrRemove,
+}) => {
+  return !loading && movieDetails ? (
     <div
+      title="detailPage"
       className={`DetailPage ${fontClassGetterByIndex(categoryId)}`}
       style={{
-        backgroundImage: movieDetails
-          ? `url(${frecuentUrls.baseImgUrls}${movieDetails.backdrop_path})`
-          : "none",
+        backgroundImage: `url(${frecuentUrls.baseImgUrls}${movieDetails.backdrop_path})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
     >
-      <Backdrop />
+      <Backdrop show={true} clickHandler={() => {}} />
       {!loading && (
         <div className="MovieZCapsule">
           <div className="titleAndX">
@@ -75,11 +38,16 @@ const DetailPage = () => {
                 pathname: "/",
               }}
             >
-              <span className="CloseX">X</span>
+              <div className="CloseX">
+                <IconBox>
+                  <Icon icon="Close" />
+                </IconBox>
+              </div>
             </Link>
           </div>
           <div className="MovieContainer">
             <img
+              alt={movieDetails.title}
               className="MovieImage"
               src={`${frecuentUrls.baseImgUrls}${movieDetails.poster_path}`}
             />
@@ -95,17 +63,18 @@ const DetailPage = () => {
               </div>
               <p>{movieDetails.overview}</p>
               <button
-                onClick={() => MovieToWishListToggleHandler()}
-                className="wishListButton"
+                title="wishListButton"
+                onClick={() => addOrRemove()}
+                className="WishListButton HoverRed"
               >
-                {!isOnWishList ? "Add to Watchlist" : "Remove"}
+                {!isOnWishList ? "Add" : "Remove"}
               </button>
             </div>
           </div>
         </div>
       )}
     </div>
-  );
+  ) : null;
 };
 
 export default DetailPage;

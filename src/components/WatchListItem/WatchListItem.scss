@@ -1,0 +1,22 @@
+@import "../../utils/variables";
+
+.WatchListItem {
+  width: 60%;
+  margin: 1%;
+  border-radius: 4%;
+
+  .WatchListItemImg {
+    width: 100%;
+    height: auto;
+  }
+  .WatchListItemClose {
+    transform: translate(50%, -570%);
+    justify-content: center;
+    display: flex;
+    .IconBox {
+      transform: scale(0.75);
+      width: 15px;
+      background-color: $backGrey;
+    }
+  }
+}

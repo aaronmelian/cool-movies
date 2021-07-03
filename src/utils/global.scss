@@ -1,0 +1,22 @@
+@import "./variables";
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  cursor: default;
+  margin: 0;
+}
+
+.HoverRed {
+  &:hover {
+    background-color: $mainRed;
+    -webkit-transition: background-color 1.5s ease-out;
+    -moz-transition: background-color 1.5s ease-out;
+    -o-transition: background-color 1.5s ease-out;
+    transition: background-color 1.5s ease-out;
+  }
+}

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import "./Carousel.scss";
 
 const Carousel = ({ children, categoryName }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [paused, setPaused] = useState(true);
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -16,28 +16,15 @@ const Carousel = ({ children, categoryName }) => {
     setActiveIndex(newIndex);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!paused) {
-        updateIndex(activeIndex + 1);
-      }
-    }, 3000);
-
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  });
-
   return (
-    <div
-      className="Carousel"
-      // onMouseEnter={() => setPaused(true)}
-      // onMouseLeave={() => setPaused(false)}
-    >
-      <h2 className="CategoryTitle">{categoryName}</h2>
+    <div className="Carousel" title="Carousel">
+      {categoryName ? (
+        <h2 title={"CategoryTitle"} className="CategoryTitle">
+          {categoryName}
+        </h2>
+      ) : null}
       <div
+        title="inner"
         className="Inner"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
@@ -77,6 +64,15 @@ const Carousel = ({ children, categoryName }) => {
       </div>
     </div>
   );
+};
+
+Carousel.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  categoryName: PropTypes.string.isRequired,
+};
+
+Carousel.defaultProps = {
+  categoryName: "Movie List",
 };
 
 export default Carousel;

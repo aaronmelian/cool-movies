@@ -1,7 +1,9 @@
+@import "../../utils/variables";
+
 .Carousel {
   overflow: hidden;
   padding: 1rem;
-  border-bottom: 1px dashed rgba(112, 100, 100, 0.3);
+  border-bottom: 1px dashed $lightGrey;
 }
 
 .Inner {
@@ -20,19 +22,27 @@
 }
 
 .Indicators > button.active {
-  color: #fff;
+  color: white;
+  background-color: $black;
+  border: 3px solid $mainRed;
 }
 
 .CarButton {
-  background-color: #82284d;
+  background-color: $black;
   box-shadow: none;
-  border: 3px solid #8c232c;
+  border: none;
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
-  color: black;
+  color: white;
 }
 
 .CategoryTitle {
   text-align: initial;
+}
+
+@media (max-width: 576px) {
+  .Indicators > button {
+    margin: 3px;
+  }
 }

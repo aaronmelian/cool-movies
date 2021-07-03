@@ -1,13 +1,15 @@
+@import "../../utils/variables";
+
 .Header {
   position: relative;
-  min-height: 10vh;
+  height: 5vh;
   padding: 1rem;
-  background-color: black;
-  color: white;
-  border-bottom: 4px solid #8c232c;
+  background-color: $black;
+  color: $white;
+  border-bottom: 4px solid $mainRed;
   z-index: 500;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   a {
     text-decoration: none;
   }
@@ -15,4 +17,5 @@
 
 .HeaderTitle {
   width: 100%;
+  margin: 0;
 }

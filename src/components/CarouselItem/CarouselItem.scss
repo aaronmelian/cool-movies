@@ -1,10 +1,13 @@
+@import "../../utils/variables";
+
 .CarouselItem {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: $white;
+  width: 100%;
   a {
-    color: white;
+    color: $white;
   }
 }
 
@@ -13,5 +16,22 @@
   cursor: pointer;
   img {
     width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .MovieImage {
+    max-width: 100%;
+  }
+  .MovieDetails {
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+  .MovieTagline {
+    margin: 1rem auto;
+  }
+  .CarouselBox {
+    width: 80%;
   }
 }
