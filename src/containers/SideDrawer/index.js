@@ -28,7 +28,11 @@ const SideDrawer = ({ movies, removeMovie }) => {
         <div className="FavoriteList">
           {movies.map((mov, i) => {
             return (
-              <div title={`watchTest${i}`} key={mov.id}>
+              <div
+                title={`watchTest${i}`}
+                key={mov.id}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
                 <WatchListItem
                   clickedToClose={() => removeMovie(mov.id)}
                   WatchListItemClickedHandler={() => setVisible(false)}
