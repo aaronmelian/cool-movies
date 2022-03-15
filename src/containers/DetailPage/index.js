@@ -1,6 +1,6 @@
 import React from "react";
 import "./DetailPage.scss";
-import Backdrop from "../../components/Backdrop";
+import Backdrop from "../../components/BackDrop/index";
 import { Link } from "react-router-dom";
 import Icon from "../../components/Icon";
 import IconBox from "../../components/IconBox";

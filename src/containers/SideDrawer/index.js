@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Backdrop from "../../components/Backdrop";
+import Backdrop from "../../components/BackDrop";
 import "./SideDrawer.scss";
 import Icon from "../../components/Icon";
 import WatchListItem from "../../components/WatchListItem";
